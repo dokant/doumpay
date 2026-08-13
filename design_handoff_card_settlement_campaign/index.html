@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>카드매출 정산금 누락방지 캠페인 · 전국소상공인협회</title>
+<meta name="description" content="자영업자·소상공인의 카드매출 정산금 누락, 실태조사부터 재발방지까지. 전국소상공인협회가 강남3구에서 무료 캠페인을 시작합니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Nanum+Myeongjo:wght@400;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF6EE;
+  --bg-2:#F5EDDE;
+  --paper:#FFFDF8;
+  --ink:#1F1A14;
+  --ink-2:#3A322A;
+  --muted:#7A6E5F;
+  --line:#E7DBC5;
+  --line-2:#D8C7A6;
+  --brand:#D2691E;            /* warm orange */
+  --brand-2:#A9430E;
+  --brand-soft:#F6DFC4;
+  --accent:#2E5D4E;           /* deep pine green for trust */
+  --danger:#B44A2A;
+  --shadow: 0 1px 0 rgba(31,26,20,.04), 0 20px 40px -20px rgba(120,70,20,.18);
+  --radius: 18px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans KR", system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.65;
+  font-weight:400;
+}
+h1,h2,h3,h4{font-weight:800; letter-spacing:-0.02em; line-height:1.2; color:var(--ink); margin:0}
+h1{font-size:clamp(34px, 5.4vw, 64px); font-weight:900; letter-spacing:-0.035em}
+h2{font-size:clamp(26px, 3.4vw, 40px)}
+h3{font-size:clamp(18px, 2vw, 22px)}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%; display:block}
+.serif{font-family:"Nanum Myeongjo", serif}
+.mono{font-family:"JetBrains Mono", ui-monospace, monospace; font-feature-settings:"tnum" 1}
+
+.container{max-width:1200px; margin:0 auto; padding:0 24px}
+.container-narrow{max-width:960px; margin:0 auto; padding:0 24px}
+
+/* ================ NAV ================ */
+.nav{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(1.4) blur(10px);
+  background:rgba(251,246,238,.85);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 24px; max-width:1200px; margin:0 auto;
+}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none}
+.brand-mark{
+  width:34px; height:34px; border-radius:9px;
+  background: radial-gradient(120% 120% at 20% 20%, #F0A96A 0%, var(--brand) 55%, var(--brand-2) 100%);
+  display:grid; place-items:center;
+  color:#FFF6E9; font-weight:900; font-size:14px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.35), 0 6px 14px -6px rgba(210,105,30,.55);
+}
+.brand-name{font-weight:800; letter-spacing:-.02em; font-size:16px}
+.brand-sub{color:var(--muted); font-size:12px; margin-left:2px}
+.nav-links{display:flex; gap:26px; align-items:center}
+.nav-links a{text-decoration:none; color:var(--ink-2); font-size:14px; font-weight:500}
+.nav-links a:hover{color:var(--brand-2)}
+.nav-cta{
+  background:var(--ink); color:#FFF6E9; text-decoration:none;
+  padding:10px 16px; border-radius:999px; font-size:14px; font-weight:600;
+  transition:transform .15s ease, background .2s;
+}
+.nav-cta:hover{background:var(--brand-2); transform:translateY(-1px)}
+@media (max-width: 780px){ .nav-links{display:none} }
+
+/* ================ HERO ================ */
+.hero{
+  position:relative; overflow:hidden;
+  padding: 72px 0 100px;
+}
+.hero::before{
+  content:""; position:absolute; inset:auto -20% -60% -20%; height:60%;
+  background: radial-gradient(60% 100% at 50% 0%, rgba(210,105,30,.14), rgba(210,105,30,0) 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid; grid-template-columns: 1.15fr .95fr; gap:56px; align-items:center;
+}
+@media (max-width: 940px){ .hero-grid{grid-template-columns:1fr; gap:36px} }
+
+.pill{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--brand-soft); color:var(--brand-2);
+  padding:8px 14px; border-radius:999px; font-weight:600; font-size:13px;
+  border:1px solid rgba(210,105,30,.2);
+}
+.pill .dot{width:6px; height:6px; border-radius:50%; background:var(--brand); box-shadow:0 0 0 4px rgba(210,105,30,.18)}
+
+.hero h1 .accent{
+  background: linear-gradient(180deg, transparent 62%, rgba(210,105,30,.35) 62%, rgba(210,105,30,.35) 92%, transparent 92%);
+}
+.hero-lede{
+  margin-top:22px; color:var(--ink-2); font-size:clamp(16px, 1.4vw, 18px); max-width:52ch;
+}
+.hero-ctas{margin-top:32px; display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 22px; border-radius:12px; font-weight:700; font-size:15px;
+  text-decoration:none; border:1px solid transparent; cursor:pointer;
+  transition:transform .12s ease, box-shadow .2s, background .2s;
+}
+.btn-primary{background:var(--brand); color:#FFF6E9; box-shadow:0 10px 24px -10px rgba(210,105,30,.6)}
+.btn-primary:hover{background:var(--brand-2); transform:translateY(-1px)}
+.btn-ghost{background:transparent; color:var(--ink); border-color:var(--line-2)}
+.btn-ghost:hover{background:var(--bg-2)}
+.btn svg{width:16px; height:16px}
+
+.hero-meta{
+  margin-top:28px; display:flex; flex-wrap:wrap; gap:20px 28px;
+  color:var(--muted); font-size:13px;
+}
+.hero-meta b{color:var(--ink); font-weight:700}
+
+.hero-visual{
+  position:relative; aspect-ratio: 4/5;
+  border-radius: 24px; overflow:hidden;
+  box-shadow: var(--shadow);
+  background:var(--bg-2);
+}
+.hero-visual img{width:100%; height:100%; object-fit:cover}
+.hero-visual::after{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(31,26,20,0) 55%, rgba(31,26,20,.5) 100%);
+}
+.hero-badge{
+  position:absolute; left:20px; bottom:20px; right:20px;
+  color:#FFF6E9; z-index:2;
+}
+.hero-badge .kicker{font-size:12px; opacity:.85; letter-spacing:.08em; text-transform:uppercase}
+.hero-badge .title{font-weight:800; font-size:20px; margin-top:6px; letter-spacing:-.02em}
+
+/* Floating stat card */
+.stat-float{
+  position:absolute; top:24px; right:-14px;
+  background:var(--paper); border:1px solid var(--line);
+  border-radius:16px; padding:14px 16px; width:min(260px, 70%);
+  box-shadow: 0 20px 40px -20px rgba(31,26,20,.25);
+  z-index:3;
+}
+.stat-float .k{font-size:12px; color:var(--muted); font-weight:600}
+.stat-float .v{font-size:20px; font-weight:900; letter-spacing:-.02em; margin-top:2px}
+.stat-float .v small{font-size:13px; color:var(--brand-2); font-weight:700}
+.stat-float .note{font-size:11px; color:var(--muted); margin-top:6px}
+
+/* Marquee band */
+.band{
+  background:var(--ink); color:#FFF6E9;
+  padding:14px 0; overflow:hidden;
+  border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);
+}
+.band-track{
+  display:flex; gap:60px; white-space:nowrap;
+  animation: slide 30s linear infinite;
+  font-weight:600; font-size:14px; letter-spacing:.02em;
+}
+.band-track span{opacity:.9; display:inline-flex; align-items:center; gap:12px}
+.band-track em{color:var(--brand-soft); font-style:normal; font-weight:800}
+@keyframes slide{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ================ SECTION SHELL ================ */
+section{padding: 96px 0}
+.section-head{max-width:720px; margin:0 auto 56px; text-align:center}
+.section-head .eyebrow{
+  color:var(--brand-2); font-weight:700; font-size:13px; letter-spacing:.14em; text-transform:uppercase;
+}
+.section-head h2{margin-top:12px}
+.section-head p{color:var(--ink-2); margin-top:14px; font-size:17px}
+
+/* ================ WHAT IS ================ */
+.what{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.what-grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap:56px; align-items:center;
+}
+@media (max-width: 900px){ .what-grid{grid-template-columns:1fr} }
+.what-img{
+  border-radius: var(--radius); overflow:hidden; aspect-ratio: 5/4;
+  box-shadow: var(--shadow);
+}
+.what-img img{width:100%; height:100%; object-fit:cover}
+.what h2{margin-bottom:18px}
+.what p{color:var(--ink-2); font-size:16px; margin-bottom:14px}
+.what .callout{
+  margin-top:24px; padding:20px 22px; border-radius:14px;
+  background:var(--bg-2); border:1px dashed var(--line-2);
+  color:var(--ink); font-size:15px;
+}
+.what .callout b{color:var(--brand-2)}
+
+/* ================ TYPES ================ */
+.types-grid{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:20px;
+}
+@media (max-width: 900px){ .types-grid{grid-template-columns:1fr} }
+.type-card{
+  background:var(--paper); border:1px solid var(--line);
+  border-radius: var(--radius); padding:28px 26px;
+  transition: transform .2s ease, box-shadow .2s;
+  position:relative; overflow:hidden;
+}
+.type-card:hover{transform:translateY(-3px); box-shadow: var(--shadow)}
+.type-num{
+  font-family:"Nanum Myeongjo", serif; font-weight:800;
+  font-size:44px; color:var(--brand); letter-spacing:-.02em;
+  display:block; line-height:1;
+}
+.type-card h3{margin-top:16px}
+.type-card p{color:var(--ink-2); margin-top:10px; font-size:15px}
+.type-tag{
+  display:inline-block; margin-top:18px;
+  background:var(--brand-soft); color:var(--brand-2);
+  font-size:12px; font-weight:700; padding:5px 10px; border-radius:999px;
+}
+
+/* ================ PROCESS ================ */
+.process{background:var(--bg-2)}
+.steps{
+  display:grid; grid-template-columns: repeat(4, 1fr); gap:0;
+  border:1px solid var(--line-2); border-radius: var(--radius); overflow:hidden;
+  background:var(--paper);
+}
+@media (max-width: 900px){ .steps{grid-template-columns:1fr 1fr} }
+@media (max-width: 560px){ .steps{grid-template-columns:1fr} }
+.step{
+  padding:32px 24px; border-right:1px solid var(--line);
+  position:relative;
+}
+.step:last-child{border-right:none}
+@media (max-width: 900px){
+  .step{border-right:1px solid var(--line); border-bottom:1px solid var(--line)}
+  .step:nth-child(2n){border-right:none}
+  .step:nth-last-child(-n+2){border-bottom:none}
+}
+@media (max-width: 560px){
+  .step{border-right:none; border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:none}
+}
+.step-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:32px; height:32px; border-radius:50%;
+  background:var(--ink); color:var(--brand-soft);
+  font-weight:800; font-size:14px;
+  font-family:"JetBrains Mono", monospace;
+}
+.step h3{margin-top:16px; font-size:19px}
+.step p{margin-top:10px; color:var(--ink-2); font-size:14px}
+
+/* ================ TRUST STRIP ================ */
+.trust{
+  padding:56px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  background:var(--paper);
+}
+.trust-grid{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:24px;
+}
+@media (max-width: 780px){ .trust-grid{grid-template-columns:1fr} }
+.trust-item{display:flex; gap:16px; align-items:flex-start}
+.trust-ico{
+  flex-shrink:0; width:44px; height:44px; border-radius:12px;
+  background:var(--brand-soft); color:var(--brand-2);
+  display:grid; place-items:center;
+}
+.trust-ico svg{width:22px; height:22px}
+.trust-item h4{font-size:16px; font-weight:800; margin-bottom:4px}
+.trust-item p{color:var(--muted); font-size:14px}
+
+/* ================ QUOTE ================ */
+.quote{background:var(--bg-2); padding: 88px 0}
+.quote-inner{
+  max-width:820px; margin:0 auto; text-align:center; padding:0 24px;
+}
+.quote blockquote{
+  font-family:"Nanum Myeongjo", serif; font-weight:400;
+  font-size:clamp(22px, 2.6vw, 30px); line-height:1.5; letter-spacing:-.02em;
+  color:var(--ink); margin:0;
+}
+.quote blockquote::before{content:"“"; color:var(--brand); font-size:3em; line-height:0; vertical-align:-.35em; margin-right:.1em; font-weight:800}
+.quote blockquote::after{content:"”"; color:var(--brand); font-size:3em; line-height:0; vertical-align:-.6em; margin-left:.05em; font-weight:800}
+.quote cite{
+  display:block; margin-top:28px; font-style:normal;
+  color:var(--muted); font-size:14px;
+}
+.quote cite b{color:var(--ink); font-weight:700}
+
+/* ================ PRESS ================ */
+.press-card{
+  display:grid; grid-template-columns: 1.4fr 1fr; gap:36px; align-items:stretch;
+  background:var(--paper); border:1px solid var(--line);
+  border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow);
+}
+@media (max-width: 820px){ .press-card{grid-template-columns:1fr} }
+.press-body{padding: 40px 40px}
+.press-source{
+  color:var(--brand-2); font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+}
+.press-body h3{margin-top:10px; font-size:22px}
+.press-body p{color:var(--ink-2); margin-top:14px; font-size:15px}
+.press-link{
+  display:inline-flex; align-items:center; gap:8px;
+  margin-top:22px; font-weight:700; color:var(--brand-2); text-decoration:none;
+  border-bottom:1px solid transparent; padding-bottom:2px;
+}
+.press-link:hover{border-bottom-color:var(--brand-2)}
+.press-img{background:var(--bg-2)}
+.press-img img{width:100%; height:100%; object-fit:cover; min-height:220px}
+
+/* ================ FORM ================ */
+.apply{background:var(--ink); color:#FFF6E9; position:relative; overflow:hidden}
+.apply::before{
+  content:""; position:absolute; inset:auto -10% -70% -10%; height:70%;
+  background: radial-gradient(50% 100% at 50% 0%, rgba(210,105,30,.28), transparent 70%);
+  pointer-events:none;
+}
+.apply .section-head h2{color:#FFF6E9}
+.apply .section-head p{color:#EADFC8}
+.apply .section-head .eyebrow{color:#F0B37A}
+
+.apply-grid{
+  display:grid; grid-template-columns: .8fr 1.2fr; gap:32px; align-items:start;
+}
+@media (max-width: 940px){ .apply-grid{grid-template-columns:1fr} }
+
+.apply-info{
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius); padding:30px;
+}
+.apply-info h3{color:#FFF6E9; font-size:20px}
+.apply-info .info-list{margin-top:22px; display:flex; flex-direction:column; gap:18px}
+.info-row{display:flex; gap:14px; align-items:flex-start}
+.info-ico{
+  flex-shrink:0; width:36px; height:36px; border-radius:10px;
+  background:rgba(240,169,106,.15); color:#F0B37A;
+  display:grid; place-items:center;
+}
+.info-ico svg{width:18px; height:18px}
+.info-row .k{font-size:12px; color:#B5A891; font-weight:600; letter-spacing:.06em; text-transform:uppercase}
+.info-row .v{font-size:15px; color:#FFF6E9; font-weight:600; margin-top:2px; word-break:break-all}
+.info-row .v a{color:#FFF6E9; text-decoration:none; border-bottom:1px dotted rgba(255,246,233,.4)}
+
+.apply-note{
+  margin-top:24px; padding:16px; border-radius:12px;
+  background: rgba(240,169,106,.08); border:1px dashed rgba(240,169,106,.3);
+  font-size:13px; color:#EADFC8; line-height:1.6;
+}
+.apply-note b{color:#F0B37A}
+
+.form-shell{
+  background:var(--paper); border-radius: var(--radius); overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,.4);
+}
+.form-shell-top{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:14px 20px; background:var(--bg-2); border-bottom:1px solid var(--line);
+  color:var(--ink-2);
+}
+.form-shell-top .dots{display:flex; gap:6px}
+.form-shell-top .dots i{width:10px; height:10px; border-radius:50%; background:#E8CDA7; display:inline-block}
+.form-shell-top .dots i:nth-child(1){background:#E8A17A}
+.form-shell-top .dots i:nth-child(2){background:#E8C87A}
+.form-shell-top .label{font-size:12px; font-weight:700; color:var(--ink)}
+.form-shell-top .open-new{
+  color:var(--brand-2); text-decoration:none; font-size:12px; font-weight:700;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.form-frame{
+  width:100%; height:720px; border:0; background:var(--paper); display:block;
+}
+.form-fallback{
+  padding:60px 30px; text-align:center; color:var(--ink-2);
+}
+.form-fallback .btn{margin-top:20px}
+
+/* ================ FAQ (compact) ================ */
+.faq{background:var(--bg)}
+.faq-list{max-width:820px; margin:0 auto; display:flex; flex-direction:column; gap:12px}
+.faq-item{
+  background:var(--paper); border:1px solid var(--line); border-radius:14px;
+  overflow:hidden;
+}
+.faq-item summary{
+  list-style:none; cursor:pointer;
+  padding:20px 24px; font-weight:700; font-size:16px;
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .plus{color:var(--brand-2); font-weight:900; font-size:22px; transition:transform .2s}
+.faq-item[open] summary .plus{transform:rotate(45deg)}
+.faq-item .a{padding: 0 24px 22px; color:var(--ink-2); font-size:15px; line-height:1.7}
+
+/* ================ FOOTER ================ */
+footer{background:var(--ink); color:#B5A891; padding: 56px 0 40px}
+.foot{
+  display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap:36px;
+}
+@media (max-width: 820px){ .foot{grid-template-columns:1fr} }
+footer .brand-name{color:#FFF6E9}
+footer .brand-sub{color:#B5A891}
+footer h4{color:#FFF6E9; font-size:14px; margin-bottom:14px; letter-spacing:.02em}
+footer p, footer a{font-size:13px; color:#B5A891; text-decoration:none; line-height:1.9}
+footer a:hover{color:#F0B37A}
+.foot-legal{
+  margin-top:36px; padding-top:24px; border-top:1px solid rgba(255,255,255,.08);
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  color:#7A6E5F; font-size:12px;
+}
+
+/* Small helpers */
+.hide-sm{display:initial}
+@media (max-width: 620px){ .hide-sm{display:none} }
+
+/* reveal on scroll */
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease}
+.reveal.in{opacity:1; transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <div class="brand-mark">소</div>
+      <div>
+        <div class="brand-name">전국소상공인협회</div>
+        <div class="brand-sub">National Small Business Association</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#what">캠페인 소개</a>
+      <a href="#types">누락 유형</a>
+      <a href="#process">참여 절차</a>
+      <a href="#press">언론 보도</a>
+      <a href="#apply">문의 · 신청</a>
+    </nav>
+    <a href="#apply" class="nav-cta">참여 신청</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<main id="top">
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="pill"><span class="dot"></span>2026년 8월 24일 · 강남3구 시범 시작</span>
+        <h1 style="margin-top:22px">
+          받아야 할 <span class="accent">카드매출</span>,<br>
+          빠짐없이 확인하세요.
+        </h1>
+        <p class="hero-lede">
+          결제는 됐는데 입금은 되지 않은 돈. <b>카드매출 정산금 누락</b>은 사장님이 알아채기 어려운 구조에서 발생합니다.
+          전국소상공인협회가 강남구·서초구·송파구를 시작으로 <b>무료 실태조사 캠페인</b>을 진행합니다.
+        </p>
+        <div class="hero-ctas">
+          <a href="#apply" class="btn btn-primary">
+            캠페인 참여 신청하기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#what" class="btn btn-ghost">
+            자세히 알아보기
+          </a>
+        </div>
+        <div class="hero-meta">
+          <div><b>100% 무료</b> · 회원가입비 없음</div>
+          <div><b>단말기 교체</b> 요구하지 않음</div>
+          <div><b>지역 상인회</b>와 협력 진행</div>
+        </div>
+      </div>
+
+      <div style="position:relative">
+        <div class="hero-visual">
+          <img src="assets/hero-cafe.jpg" alt="소상공인 매장 카운터 이미지">
+          <div class="hero-badge">
+            <div class="kicker">Campaign 2026</div>
+            <div class="title">사장님이 놓치고 있는 매출을 찾아드립니다</div>
+          </div>
+        </div>
+        <div class="stat-float">
+          <div class="k">공식 집계된 피해규모</div>
+          <div class="v">미집계 <small>· 실태조사 착수</small></div>
+          <div class="note">금융당국·유관기관의 공식 통계가 없어 정확한 실태 파악이 첫 걸음입니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- MARQUEE -->
+<div class="band" aria-hidden="true">
+  <div class="band-track">
+    <span>망취소 <em>NET-CANCEL</em></span>
+    <span>중복결제 <em>DOUBLE-CHARGE</em></span>
+    <span>매입 미전송 <em>VAN ERROR</em></span>
+    <span>정산 지연 <em>SETTLEMENT DELAY</em></span>
+    <span>사장님이 놓치는 매출 <em>UNCLAIMED SALES</em></span>
+    <!-- duplicate for seamless -->
+    <span>망취소 <em>NET-CANCEL</em></span>
+    <span>중복결제 <em>DOUBLE-CHARGE</em></span>
+    <span>매입 미전송 <em>VAN ERROR</em></span>
+    <span>정산 지연 <em>SETTLEMENT DELAY</em></span>
+    <span>사장님이 놓치는 매출 <em>UNCLAIMED SALES</em></span>
+  </div>
+</div>
+
+<!-- WHAT IS -->
+<section id="what" class="what">
+  <div class="container">
+    <div class="what-grid">
+      <div class="what-img reveal">
+        <img src="assets/calculator.jpg" alt="계산기와 서류 - 매출·입금 대조 이미지">
+      </div>
+      <div class="reveal">
+        <div class="section-head" style="text-align:left; margin:0 0 22px">
+          <div class="eyebrow">카드매출 정산금 누락이란?</div>
+          <h2 style="margin-top:10px">결제는 승인, 입금은 누락.<br>보이지 않는 사각지대.</h2>
+        </div>
+        <p>
+          손님이 카드를 긁고 승인이 떨어졌지만, 며칠 뒤 <b>정산 계좌에 그 금액이 들어오지 않는 경우</b>가 있습니다.
+          결제 승인과 실제 입금은 별개의 프로세스이며, 그 사이 여러 단계에서 <b>돈이 사라지는 사고</b>가 발생할 수 있습니다.
+        </p>
+        <p>
+          여신금융협회가 <b>가맹점 매출거래정보 통합조회 서비스</b>를 무료 제공하고 있지만,
+          단말기 결제 내역과 실제 입금 내역을 <b>일일이 대조</b>하지 않으면 사장님은 누락 자체를 알아채기 어렵습니다.
+        </p>
+        <div class="callout">
+          👉 협회는 이번 캠페인에서 <b>참여 가맹점의 결제/입금 내역을 대조</b>하여 누락의 <b>발생 유형·빈도·금액대</b>를 파악하고,
+          결과를 토대로 <b>제도 개선안</b>을 정부·유관기관에 건의합니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section id="types">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why it happens</div>
+      <h2>대표적인 누락 발생 유형</h2>
+      <p>결제와 정산 사이의 여러 단계에서 매출대금이 새어 나갑니다.</p>
+    </div>
+    <div class="types-grid">
+      <article class="type-card reveal">
+        <span class="type-num">01</span>
+        <h3>매입 자료 미전송</h3>
+        <p>결제 승인은 이뤄졌지만 밴(VAN)사를 거치는 <b>매입 자료가 카드사로 정상 전송되지 않은 경우</b>. 승인 내역만 남고 입금은 발생하지 않습니다.</p>
+        <span class="type-tag">VAN · 매입 오류</span>
+      </article>
+      <article class="type-card reveal">
+        <span class="type-num">02</span>
+        <h3>망취소 (통신장애 자동취소)</h3>
+        <p>결제 도중 <b>통신 장애</b>로 승인 응답이 원활치 않아 시스템이 자동으로 승인을 취소해버리는 경우. 사장님은 결제된 줄 알지만 정산은 되지 않습니다.</p>
+        <span class="type-tag">Net-Cancel · 망취소</span>
+      </article>
+      <article class="type-card reveal">
+        <span class="type-num">03</span>
+        <h3>중복결제 인식 처리</h3>
+        <p>짧은 시간 안에 이뤄진 <b>정상 결제가 중복결제로 오인</b>되어 한 건이 취소·환불 처리되는 경우. 매출은 있었으나 정산은 한 건만 잡힙니다.</p>
+        <span class="type-tag">Duplicate · 중복결제 오인</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Campaign Process</div>
+      <h2>캠페인 참여, 이렇게 진행됩니다</h2>
+      <p>회원가입비도, 단말기 교체 요구도 없습니다. 실태 파악부터 재발 방지까지.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>참여 신청</h3>
+        <p>본 페이지의 <b>구글폼</b>을 통해 매장 정보를 접수합니다. 강남·서초·송파 3구 우선.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>내역 대조 조사</h3>
+        <p>단말기 <b>결제 내역</b>과 <b>실제 입금 내역</b>을 대조하여 누락 발생 여부를 확인합니다.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>확인 · 안내</h3>
+        <p>누락이 확인되면 사장님이 <b>카드사·밴사에 직접 확인 요청</b>할 수 있도록 절차를 안내합니다.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <h3>제도 개선 건의</h3>
+        <p>실태조사 결과를 토대로 <b>재발 방지 제도 개선안</b>을 관계 기관에 건의합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust" style="padding:56px 0">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item reveal">
+        <div class="trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div>
+          <h4>100% 무료 · 별도 계약 없음</h4>
+          <p>회원가입비, 단말기 교체 등 어떤 계약도 요구하지 않습니다.</p>
+        </div>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <h4>지역 상인회와 협력</h4>
+          <p>이미 업무협약을 체결한 상인 단체와 함께 신뢰 있게 진행합니다.</p>
+        </div>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        </div>
+        <div>
+          <h4>제도 개선까지</h4>
+          <p>조사 결과는 재발 방지 정책 제안의 근거로 활용됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <div class="quote-inner reveal">
+    <blockquote>
+      카드매출 정산금 누락은 개별 자영업자가 매출 데이터를 일일이 대조하기 어려운 구조에서 비롯되는 문제입니다.
+      우선 실태를 정확히 파악하는 것이 먼저인 만큼, 강남3구를 시작으로 조사 범위를 넓혀 소상공인이 정당하게 받아야 할 대금을 빠짐없이 확인할 수 있도록 하겠습니다.
+    </blockquote>
+    <cite><b>정충교</b> · 전국소상공인협회 협회장</cite>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section id="press">
+  <div class="container-narrow">
+    <div class="section-head reveal" style="margin-bottom:36px">
+      <div class="eyebrow">In the Press</div>
+      <h2>언론 보도</h2>
+    </div>
+    <article class="press-card reveal">
+      <div class="press-body">
+        <div class="press-source">뉴스9 · 2026</div>
+        <h3>전국소상공인협회, 강남3구서 '카드매출 정산금 누락방지 캠페인' 착수</h3>
+        <p>
+          자영업자 카드매출 정산 사각지대 해소를 위해 실태조사를 진행하고, 그 결과를 토대로 제도 개선을 건의한다.
+          8월 24일부터 강남구·서초구·송파구를 시작으로 순차 확대할 예정.
+        </p>
+        <a class="press-link" href="http://news9.co.kr/bbs/board.php?bo_table=04&wr_id=562" target="_blank" rel="noopener">
+          뉴스9 원문 보기
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <div class="press-img">
+        <img src="assets/receipt.jpg" alt="영수증 관련 이미지">
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- APPLY / FORM -->
+<section id="apply" class="apply">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Apply · 문의 및 신청</div>
+      <h2>지금 캠페인 참여를 신청하세요</h2>
+      <p>아래 신청서를 작성해 주시면, 순차적으로 연락드려 실태조사 일정을 안내해 드립니다.</p>
+    </div>
+
+    <div class="apply-grid">
+      <aside class="apply-info reveal">
+        <h3>협회 문의처</h3>
+        <div class="info-list">
+          <div class="info-row">
+            <div class="info-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="k">Phone</div>
+              <div class="v"><a href="tel:01071288192">010-7128-8192</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+            </div>
+            <div>
+              <div class="k">Email</div>
+              <div class="v"><a href="mailto:cirrus01@naver.com">cirrus01@naver.com</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 8h16"/><path d="M8 4v16"/></svg>
+            </div>
+            <div>
+              <div class="k">언론 문의</div>
+              <div class="v"><a href="mailto:jebo@news9.co.kr">jebo@news9.co.kr</a> <span style="color:#B5A891; font-weight:500">(뉴스9 제보)</span></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="k">1차 시범 지역</div>
+              <div class="v">서울 강남구 · 서초구 · 송파구</div>
+            </div>
+          </div>
+        </div>
+        <div class="apply-note">
+          <b>안내</b> — 캠페인은 무료로 진행됩니다. 참여 과정에서 <b>회원가입비, 단말기 교체 등 별도 계약</b>을 요구하지 않습니다.
+          누락이 확인되면 사장님이 <b>카드사·밴사에 직접 확인 요청</b>할 수 있도록 절차를 안내합니다.
+        </div>
+      </aside>
+
+      <div class="reveal">
+        <div class="form-shell">
+          <div class="form-shell-top">
+            <div style="display:flex; align-items:center; gap:14px">
+              <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="label">캠페인 참여 신청서</div>
+            </div>
+            <a href="#" id="openFormNew" class="open-new" target="_blank" rel="noopener">
+              새 창에서 열기
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px; height:12px"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+          <!-- Google Form embed. Real URL is injected by initForm() when GOOGLE_FORM_URL is set. -->
+          <iframe
+            id="formFrame"
+            class="form-frame"
+            title="캠페인 참여 신청 폼"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            style="display:none">
+          </iframe>
+          <div class="form-fallback" id="formFallback" style="display:none">
+            <h3 style="color:var(--ink)">구글폼 준비 중입니다</h3>
+            <p style="margin-top:10px; color:var(--muted); font-size:14px">
+              최종 폼 URL이 연결되면 이 자리에 신청서가 임베드됩니다.<br>
+              먼저 신청하시려는 사장님은 아래 연락처로 문의해 주세요.
+            </p>
+            <a href="tel:01071288192" class="btn btn-primary">📞 010-7128-8192 전화 문의</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container-narrow">
+    <div class="section-head reveal" style="margin-bottom:36px">
+      <div class="eyebrow">FAQ</div>
+      <h2>자주 묻는 질문</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal" open>
+        <summary>정말 무료인가요? 숨겨진 비용은 없나요?<span class="plus">+</span></summary>
+        <div class="a">
+          네, 100% 무료입니다. 회원가입비, 단말기 교체 등 <b>어떠한 별도 계약도 요구하지 않습니다.</b>
+          누락이 확인되는 경우에도 사장님이 카드사·밴(VAN)사에 직접 확인 요청할 수 있도록 절차만 안내해 드립니다.
+        </div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>강남3구가 아닌 지역도 신청할 수 있나요?<span class="plus">+</span></summary>
+        <div class="a">
+          현재 1차 시범지역은 강남구·서초구·송파구입니다. 지역 상인회·상가번영회와의 협력 네트워크를 순차적으로 확대할 예정이니
+          <b>타 지역 사장님도 신청서를 남겨주시면</b> 확대 시 우선 안내드리겠습니다.
+        </div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>어떤 자료를 준비해야 하나요?<span class="plus">+</span></summary>
+        <div class="a">
+          단말기의 <b>결제(승인) 내역</b>과 정산 <b>입금 내역</b>이 필요합니다.
+          여신금융협회의 <b>가맹점 매출거래정보 통합조회 서비스</b>를 통해 조회 가능하며,
+          접수 후 담당자가 준비 방법을 상세히 안내해 드립니다.
+        </div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>조사 결과는 어떻게 활용되나요?<span class="plus">+</span></summary>
+        <div class="a">
+          누락의 발생 유형·빈도·금액대 데이터를 정리해 <b>재발 방지를 위한 제도 개선</b>을 관계 기관에 건의합니다.
+          개별 사장님께는 확인된 누락 건에 대한 <b>회수 절차 안내</b>가 제공됩니다.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <div class="brand" style="margin-bottom:14px">
+          <div class="brand-mark">소</div>
+          <div>
+            <div class="brand-name">전국소상공인협회</div>
+            <div class="brand-sub">National Small Business Association</div>
+          </div>
+        </div>
+        <p style="max-width:44ch">
+          카드매출 정산 사각지대를 없애고, 소상공인이 정당하게 받아야 할 대금을 빠짐없이 확인할 수 있도록 지원합니다.
+        </p>
+      </div>
+      <div>
+        <h4>바로가기</h4>
+        <p>
+          <a href="#what">캠페인 소개</a><br>
+          <a href="#types">누락 발생 유형</a><br>
+          <a href="#process">참여 절차</a><br>
+          <a href="#apply">참여 신청</a>
+        </p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:01071288192">010-7128-8192</a><br>
+          <a href="mailto:cirrus01@naver.com">cirrus01@naver.com</a><br>
+          <span>언론 문의 · <a href="mailto:jebo@news9.co.kr">jebo@news9.co.kr</a></span>
+        </p>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <div>© 2026 전국소상공인협회 · All rights reserved.</div>
+      <div>본 페이지는 카드매출 정산금 누락방지 캠페인 안내용으로 제작되었습니다.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== Google Form URL =====
+// TODO: 실제 구글폼 URL로 교체하세요.
+// 예) https://docs.google.com/forms/d/e/1FAIpQLSxxxxx/viewform
+//     임베드용: 위 URL 끝에 "?embedded=true" 추가
+const GOOGLE_FORM_URL = "https://forms.gle/f4QKDgAzptZafcrA6";
+
+(function initForm(){
+  const frame = document.getElementById('formFrame');
+  const fallback = document.getElementById('formFallback');
+  const openNew = document.getElementById('openFormNew');
+  if(GOOGLE_FORM_URL && GOOGLE_FORM_URL.trim() !== ""){
+    const url = GOOGLE_FORM_URL;
+    const embedUrl = url.includes("?") ? url + "&embedded=true" : url + "?embedded=true";
+    frame.src = embedUrl;
+    frame.style.display = 'block';
+    openNew.href = url;
+    fallback.style.display = 'none';
+  } else {
+    frame.style.display = 'none';
+    fallback.style.display = 'block';
+    openNew.style.display = 'none';
+  }
+})();
+
+// ===== Reveal on scroll =====
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
