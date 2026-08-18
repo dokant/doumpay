@@ -43,7 +43,7 @@
   - Brand mark: 34×34px, radius 9px, 그라디언트 `radial-gradient(120% 120% at 20% 20%, #F0A96A 0%, #D2691E 55%, #A9430E 100%)`, 텍스트 "소" (color `#FFF6E9`, weight 900, 14px)
   - Brand name: `전국소상공인협회` (800 / 16px / letter-spacing -.02em) + subtitle `National Small Business Association` (12px / muted)
   - Nav links (5개): 캠페인 소개 / 누락 유형 / 참여 절차 / 언론 보도 / 문의·신청 — 14px / 500 / `#3A322A`, hover `#A9430E`
-  - CTA button "참여 신청": `background #1F1A14`, `color #FFF6E9`, `border-radius 999px`, padding `10px 16px`, hover `background #A9430E` + `translateY(-1px)`
+  - CTA button "참여 신청": `background #1F1A14`, `color #FFF6E9`, `border-radius 999px`, padding `10px 16px`, **inline `font-size: 12px`**, hover `background #A9430E` + `translateY(-1px)`
   - Mobile (<780px): nav-links 숨김
 
 ### 2. Hero
@@ -51,7 +51,7 @@
 - **Layout**: 2-col grid `1.15fr .95fr`, gap 56px, 상단 padding 72px, 하단 100px. 모바일(<940px)은 1열
 - **Components**:
   - Pill 배지: `2026년 8월 24일 · 강남3구 시범 시작`, 배경 `#F6DFC4`, 텍스트 `#A9430E`, 좌측 6px dot (`#D2691E` + `box-shadow 0 0 0 4px rgba(210,105,30,.18)`)
-  - H1: 2줄, "받아야 할 <span accent>카드매출</span>, 빠짐없이 확인하세요."
+  - H1: 1문장, "사장님 <span accent>카드매출</span>,결재는 됐는데 정산은 어디 갔을까요?"
     - font: Noto Sans KR 900, size `clamp(34px, 5.4vw, 64px)`, letter-spacing `-0.035em`, line-height 1.2
     - `.accent`는 밑줄 하이라이트: `background: linear-gradient(180deg, transparent 62%, rgba(210,105,30,.35) 62%, ... 92%, transparent 92%)`
   - Lede 문단: `#3A322A`, 17px, max-width 52ch
