@@ -1,7 +1,7 @@
-# Handoff: 전국소상공인협회 카드매출 정산금 누락방지 캠페인 랜딩페이지
+# Handoff: 카드가맹점정산보호협회 카드매출 정산금 누락방지 캠페인 랜딩페이지
 
 ## Overview
-전국소상공인협회가 2026년 8월 24일부터 서울 강남3구(강남·서초·송파)에서 착수하는
+카드가맹점정산보호협회가 2026년 8월 24일부터 서울 강남3구(강남·서초·송파)에서 착수하는
 **"자영업자 카드매출 정산금 누락방지 캠페인"** 안내 및 참여 신청을 위한 단일 페이지 랜딩(SPA-style single scroll page).
 
 핵심 목표
@@ -41,7 +41,7 @@
 - **Layout**: sticky top, 좌우 24px 패딩, max-width 1200px, `justify-content: space-between`
 - **Components**:
   - Brand mark: 34×34px, radius 9px, 그라디언트 `radial-gradient(120% 120% at 20% 20%, #F0A96A 0%, #D2691E 55%, #A9430E 100%)`, 텍스트 "소" (color `#FFF6E9`, weight 900, 14px)
-  - Brand name: `전국소상공인협회` (800 / 16px / letter-spacing -.02em) + subtitle `National Small Business Association` (12px / muted)
+  - Brand name: `카드가맹점정산보호협회` (800 / 16px / letter-spacing -.02em) + subtitle `Card Merchant Settlement Protection Association` (12px / muted)
   - Nav links (5개): 캠페인 소개 / 누락 유형 / 참여 절차 / 언론 보도 / 문의·신청 — 14px / 500 / `#3A322A`, hover `#A9430E`
   - CTA button "참여 신청": `background #1F1A14`, `color #FFF6E9`, `border-radius 999px`, padding `10px 16px`, **inline `font-size: 12px`**, hover `background #A9430E` + `translateY(-1px)`
   - Mobile (<780px): nav-links 숨김
@@ -125,13 +125,13 @@
 - **Layout**: `background #F5EDDE`, padding 88px 0, max-width 820px, 중앙 정렬
 - **Blockquote**: Nanum Myeongjo 400, size `clamp(22px, 2.6vw, 30px)`, line-height 1.5, letter-spacing -.02em, `#1F1A14`
   - `::before` "“" + `::after` "”" — Nanum Myeongjo 800, `#D2691E`, 3em size, vertical-align 조정 (before -.35em, after -.6em)
-- **Cite**: "정충교 · 전국소상공인협회 협회장" — 14px / muted, 이름만 `#1F1A14` bold
+- **Cite**: "정충교 · 카드가맹점정산보호협회 협회장" — 14px / muted, 이름만 `#1F1A14` bold
 
 ### 9. Press
 - **Layout**: max-width 960px 중앙. Press card 2-col `1.4fr 1fr` gap 36px, `background #FFFDF8`, border/radius/shadow. 모바일 <820px 1열.
 - **Body 좌측**:
   - Source: "뉴스9 · 2026" (12px / 700 / `#A9430E` / uppercase / tracking .12em)
-  - H3: "전국소상공인협회, 강남3구서 '카드매출 정산금 누락방지 캠페인' 착수"
+  - H3: "카드가맹점정산보호협회, 강남3구서 '카드매출 정산금 누락방지 캠페인' 착수"
   - 본문 요약
   - Link "뉴스9 원문 보기 →" — `#A9430E` 700, hover 밑줄 (external-link SVG 포함)
     - `href`: `http://news9.co.kr/bbs/board.php?bo_table=04&wr_id=562` (new tab)
@@ -144,8 +144,8 @@
   - `background rgba(255,255,255,.04)`, border `1px solid rgba(255,255,255,.1)`, radius 18px, padding 30px
   - Contact rows (4개): 36×36 icon box (`background rgba(240,169,106,.15)`, `color #F0B37A`, radius 10px) + k(12px muted uppercase) + v(15px `#FFF6E9` 600)
     - Phone icon: **010-7128-8192** (`tel:01071288192`)
-    - Mail icon: **cirrus01@naver.com** (`mailto:`)
-    - Grid icon: 언론 문의 **jebo@news9.co.kr** (뉴스9 제보 라벨)
+    - Mail icon: **cirrus01@naver.com** (`mailto:`)  ⚠️ *현재 index.html에서는 Cloudflare email-protection으로 난독화되어 있으며, decoder 런타임이 없는 로컬에서는 `[email protected]` 라니명으로 보입니다. 재구현 시에는 일반 `mailto:` 링크로 교체 권장.*
+    - Grid icon: 언론 문의 **jebo@news9.co.kr** (뉴스9 제보 라벨)  ⚠️ *상동 처리.*
     - Map-pin icon: 1차 시범 지역 **서울 강남구 · 서초구 · 송파구**
   - Note box: `background rgba(240,169,106,.08)`, dashed border, radius 12px, padding 16px, 13px 텍스트, `<b>` `#F0B37A`
 - **Right — Form embed shell**:
@@ -174,7 +174,7 @@
 - **Col 2 — 바로가기**: 4개 앵커 링크 (h4 14px `#FFF6E9`, 링크 13px)
 - **Col 3 — Contact**: 전화 / 이메일 / 언론 문의
 - **Legal bar**: 상단 border `1px solid rgba(255,255,255,.08)`, `justify-content: space-between`, 12px / `#7A6E5F`
-  - Left: `© 2026 전국소상공인협회 · All rights reserved.`
+  - Left: `© 2026 카드가맹점정산보호협회 · All rights reserved.`
   - Right: `본 페이지는 카드매출 정산금 누락방지 캠페인 안내용으로 제작되었습니다.`
 
 ---
@@ -383,8 +383,10 @@ Type scale:
 | Type | Value |
 |---|---|
 | 협회 대표 전화 | 010-7128-8192 |
-| 협회 이메일 | cirrus01@naver.com |
-| 언론 제보 (뉴스9) | jebo@news9.co.kr |
+| 협회 이메일 (푸터 · 일반 문의) | **on@news0.net** |
+| 협회 이메일 (푸터 · 언론 문의) | **biz@news0.net** |
+| 협회 이메일 (apply 섹션 · 난독화됨) | cirrus01@naver.com |
+| 언론 제보 (apply 섹션 · 난독화됨) | jebo@news9.co.kr |
 | 1차 시범 지역 | 서울 강남구 · 서초구 · 송파구 |
 | 캠페인 시작일 | 2026-08-24 |
 
